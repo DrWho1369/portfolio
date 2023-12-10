@@ -473,6 +473,10 @@ BREAKPOINTS
     .col {
         flex-basis: 50%;
     }
+
+    header .fa-bars {
+        display: none;
+    }
 }
 
 @media (min-width: 992px){

@@ -52,6 +52,6 @@ Bootcamps I attended:
 - Hyperion Dev Front End Developer - Python https://www.hyperiondev.com/
 - EdX Front End Developer - CSS, Javascript, React https://www.edx.org/boot-camps/coding/skills-bootcamp-in-front-end-web-development
 
-7. Add a License
+## License
 
 MIT Licence - See Licence document
