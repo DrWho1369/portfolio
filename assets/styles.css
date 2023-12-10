@@ -1,145 +1,306 @@
-html, body {
-    font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+/* 
+==============================
+SHARED CSS
+==============================
+*/
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-image: url(./images/coding-3.jpg);
-    color: antiquewhite;
 }
 
-/* CSS for Header bar (including Navigation) */
+html {
+    font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+    font-size: 16px;
+    color:  rgb(53, 53, 53);
+}
 
 header {
-    background-color: rgba(0, 0, 0, 0.616);
-    width: 100%;
-}
-.headerInner {
+    background-color: #57102C;
     color: antiquewhite;
-    margin: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
 }
 
-.headerText {
-    font-size: 40px;
-    text-align: center;
+a {
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+}
+
+main,
+aside {
+    padding: 20px 5%;
+}
+
+h1, 
+h2, 
+h3 {
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.redpill {
-    justify-content: center;
-    text-align: center;
+p {
+    margin-bottom: 15px;
 }
 
-
-ul {
-    list-style: none;
+img {
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px 1px rgba(0,0,0,0.2);
+    max-width: 100%;
 }
 
-.navItem {
+/* 
+==============================
+CSS OUTER GRID STYLES
+==============================
+ */
 
+.outer-grid {
+    display: grid;
+    height: 100vh;
+    background-color: antiquewhite;
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 90px 1fr;
+    grid-template-areas: 
+        "named-header named-header"
+        "named-innerGrid named-innerGrid";
 }
 
-.navlist {
+.outer-grid-expanded {
+    grid-template-areas: 
+        "named-header named-header"
+        "named-nav named-innerGrid";
+}
+
+.hide-nav {
+    display: none;
+}
+
+header {
+    grid-area: named-header;
+}
+
+nav {
+    grid-area: named-nav;
+}
+
+/* 
+==============================
+CSS INNER GRID CONTAINER STYLES
+==============================
+ */
+
+.inner-grid {
+    overflow-y: scroll;
+    display: grid;
+    grid-area: named-innerGrid;
+    background-color: antiquewhite;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "named-main named-main"
+        "named-aside named-aside"
+        "named-footer named-footer";
+}
+
+main {
+    grid-area: named-main;
+}
+
+aside {
+    grid-area: named-aside;
+    background-color: antiquewhite;
+}
+
+/* 
+==============================
+HEADER STYLES
+==============================
+*/
+
+header {
     display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
-.navLink {
-    font-size: 20px;
-    margin-right: 20px;
+header a {
     color: antiquewhite;
-    text-decoration: none;
-    position: relative;
 }
 
-/* Special Effect CSS for Nav Links */
+.left-header {
+    display: flex;
+    align-items: center;
+}
 
-.navLink:hover {
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); 
-    color: green; 
+.fa-bars {
+    margin-right: 10px;
+}
+
+.fa-bars:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.right-header {
+    display: flex;
+}
+
+.header-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header-link i {
+    font-size: 0.8rem;
+}
+
+.header-link a{
+    text-decoration: none;
+}
+
+.header-link:hover {
+    color: #A92159; 
+    opacity: 0.8;
     cursor: pointer; 
 }
 
-.navLink:hover::after {
-    width: 100%;
+header .logo {
+    max-width: 150px;
+    max-height: 150px;
+    box-shadow: none;
+}
+
+/* 
+==============================
+NAV STYLES
+==============================
+*/
+
+nav {
+    padding-top: 20px;
+    border-right: 2px solid rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.nav-link a{
+    text-decoration: none;
+    align-items: center;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    color: #57102C; 
+}
+
+.nav-link:hover::after {
+    width: 75%;
     left: 0;
 }
 
-.navLink::after {
+.nav-link::after {
     content: "";
-    position: absolute;
     display: block;
     height: 2px;
-    background: green;
+    background: #57102C;
     left: 50%;
     width: 0;
     bottom: -4px;
     transition: width 0.3s ease, left 0.3s ease;
-}
+} 
 
-/* CSS for Grid of projects */
 
-.grid-container {
+/* 
+==============================
+COLLAGE STYLES
+==============================
+*/
+
+.collage {
+    height: auto;
     display: grid;
-    max-width: 2000px;
-    margin: 20px auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: minmax(150px, auto);
-    grid-gap: 20px;
-    justify-content: stretch;
-    align-content: stretch;
-    height: 100vh;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 40px 1fr 40px 1fr;
+    align-items: center;
 }
 
-.grid-container p, h3 {
-    padding-left: 30px;
-}
-.grid-item-1 {
-    grid-column: 1 / 3;
-    grid-row: span 2;
-    object-fit: contain;
-    background: linear-gradient(to right, #00093cd5, #2d0b00);
-    border-top-left-radius: 125px;
+.collage * {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
 }
 
-.grid-item-2 {
-    grid-row: span 3;
-    background: linear-gradient(to left, #00093cd5, #2d0b00);
-    border-top-right-radius: 125px;
+.collage-1 {
+    grid-area: named-c1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    z-index: 1;
+    transform: rotate(-4deg);
 }
 
-.grid-item-3 {
-    background:linear-gradient(to left, #00093cd5, #2d0b00);
+.collage-2 {
+    grid-area: named-c2;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    z-index: 2;
+    box-shadow: 2px 4px 10px 2px rgba(0,0,0,0.5);
 }
 
-.grid-item-4 {
-    background: linear-gradient(to top right, #00093cd5, #2d0b00);
+.collage-3 {
+    grid-area: named-c3;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    z-index: 1;
+    transform: rotate(4deg);
 }
 
-.grid-item-5 {
-    grid-column: span 3;
-    object-fit: cover;
-    background: linear-gradient(to top right, #00093cd5, #2d0b00);
+main h3 {
+    text-align: center;
 }
 
-.grid-item {
-    color: antiquewhite;
-    padding: 20px;
+/* 
+==============================
+ASIDE STYLES
+==============================
+*/
+
+aside {
+    border-top: 2px solid rgba(0,0,0,0.1);
 }
 
-/* Footer CSS Styling */
-/* defining the footers general layout */
-footer {
+/* 
+==============================
+CSS FOOTER STYLES
+==============================
+ */
+
+ footer {
+    grid-area: named-footer;
+}
+
+.footer {
+    grid-area: named-footer;
     width: 100%;
     bottom: 0;
-    background: linear-gradient(to right, #00093cd5, #2d0b00);
+    background: linear-gradient(to right, #A92159, #57102C);
     color: antiquewhite;
-    padding: 20px 0 20px;
-    border-top-left-radius: 125px;
+    padding: 25px 0;
+    border-top-left-radius: 100px;
     font-size: 15px;
     line-height: 20px;
+}
+
+.col {
+    width: 85%;
 }
 
 .row {
@@ -151,27 +312,13 @@ footer {
     justify-content: space-between;
 }
 
-.col {
-    flex-basis: 15%;
-    padding: 10px;
+.copyright {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
 }
 
-.col:nth-child(1) {
-    flex-basis: 50%;
-}
-
-
-/* Stylising the content in the footer */
-.logo {
-    width: 100px;
-    margin-bottom: 10px;
-}
-
-.col p {
-    width: fit-content;
-    margin-bottom: 40px;
-    position: relative;
-}
 .col h3 {
     padding: 0;
     margin-left: 0;
@@ -179,7 +326,6 @@ footer {
     margin-bottom: 10px;
     position: relative;
 }
-
 
 .customList {
     padding: 0px;
@@ -201,8 +347,7 @@ ul li a{
 }
 
 .footerLink:hover {
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); 
-    color: green; 
+    color: #57102C; 
     cursor: pointer; 
 }
 
@@ -216,7 +361,7 @@ ul li a{
     position: relative;
     display: block;
     height: 2px;
-    background: green;
+    background: #57102C;
     left: 50%;
     width: 0;
     bottom: -4px;
@@ -227,10 +372,11 @@ form {
     padding-top: 15px;
     padding-bottom: 15px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid antiquewhite;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 form .fa-regular {
@@ -258,17 +404,6 @@ form button .fa-solid {
     color: antiquewhite;
 }
 
-hr {
-    width: 90%;
-    border: 0;
-    border-bottom: 1px solid antiquewhite;
-    margin: 20px auto;
-}
-
-.copyright {
-    text-align: center;
-}
-
 .underline {
     width: 100%;
     height: 5px;
@@ -289,7 +424,13 @@ hr {
     top: 0;
     left: 10px;
     animation: moving 2s linear infinite;
-}
+} 
+
+/* 
+==============================
+KEYFRAMES
+==============================
+*/
 
 @keyframes moving {
     0% {
@@ -311,3 +452,77 @@ hr {
         flex-basis: 100%;
     }
 }
+
+/* 
+==============================
+BREAKPOINTS
+==============================
+*/
+
+@media (min-width: 576px){
+    nav {
+        display: block !important;
+    }
+
+    .outer-grid {
+        grid-template-areas: 
+        "named-header named-header"
+        "named-nav named-innerGrid";
+    }
+
+    .col {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 992px){
+    .inner-grid {
+        grid-template-rows: 1fr 60px;
+        grid-template-columns: minmax(auto, 700px) 1fr;
+        grid-template-areas: 
+            "named-main named-aside"
+            "named-footer named-footer";
+    }
+
+    aside {
+        border-left: 2px solid rgba(0,0,0,0.1);
+    }
+}
+
+@media (min-width: 1440px){
+    .outer-grid {
+        grid-template-columns: 1fr 1200px 1fr;
+        grid-template-areas: 
+            "named-header named-header named-header"
+            "named-nav named-innerGrid named-innerGrid";
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr 950px 1fr;
+        grid-template-areas: "named-lh . named-rh";
+    }
+
+    .left-header {
+        grid-area: named-lh;
+        justify-self: end;
+    }
+
+    .right-header {
+        grid-area: named-rh;
+        justify-self: start;
+    }
+
+    nav {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 15px;
+    }
+
+    aside {
+        max-width: 600px;
+    }
+
+}
+
