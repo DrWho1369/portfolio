@@ -4,6 +4,16 @@ SHARED CSS
 ==============================
 */
 
+:root {
+    --main-background-color: antiquewhite;
+    --primary-text-color: rgb(53, 53, 53);
+    --light-text-color: antiquewhite;
+    --accent-color: #FF69B4;
+    --accent-color-opacity: #ff69b481;
+    --gradient-dark: rgb(0, 0, 0);
+    --gradient-light:  #2e0570;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,16 +23,16 @@ SHARED CSS
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16px;
-    color:  rgb(53, 53, 53);
+    color: var(--primary-text-color);
 }
 
 header {
-    background: linear-gradient(to left, #2e0570, rgb(0, 0, 0));;
-    color: antiquewhite;
+    background: linear-gradient(to left, var(--gradient-light), var(--gradient-dark));;
+    color: var(--light-text-color);
 }
 
 a {
-    color: rgb(53, 53, 53);
+    color: var(--primary-text-color);
     text-decoration: none;
 }
 
@@ -33,10 +43,11 @@ aside {
 
 h1, 
 h2, 
-h3 {
+h3,
+h4 {
     margin-top: 10px;
     margin-bottom: 20px;
-    color: #FF69B4;
+    color: var(--accent-color);
 }
 
 p {
@@ -86,13 +97,13 @@ nav {
 ==============================
 CSS INNER GRID CONTAINER STYLES
 ==============================
- */
+*/
 
 .inner-grid {
     overflow-y: scroll;
     display: grid;
     grid-area: named-innerGrid;
-    background-color: antiquewhite;
+    background-color: var(--main-background-color);
     grid-template-rows: 1fr auto 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -107,7 +118,7 @@ main {
 
 aside {
     grid-area: named-aside;
-    background-color: antiquewhite;
+    background-color: var(--main-background-color);
 }
 
 /* 
@@ -124,7 +135,7 @@ header {
 }
 
 header a {
-    color: antiquewhite;
+    color: var(--main-background-color);
 }
 
 .left-header {
@@ -161,14 +172,15 @@ header a {
 }
 
 .header-link:hover {
-    color: #FF69B4; 
+    color: var(--accent-color); 
     opacity: 0.8;
     cursor: pointer; 
 }
 
 header .logo {
     max-width: 150px;
-    max-height: 150px;
+    max-height: fit-content;
+    padding-bottom: 10px;
     box-shadow: none;
 }
 
@@ -181,16 +193,19 @@ NAV STYLES
 nav {
     padding-top: 20px;
     border-right: 2px solid rgba(0,0,0,0.1);
-    background-color: antiquewhite;
+    background-color: var(--main-background-color);
 }
 
-.nav-link {
+.nav-link, a {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
 }
 
+.fa-brands {
+    justify-self: center;
+}
 .nav-link a{
     text-decoration: none;
     align-items: center;
@@ -199,7 +214,7 @@ nav {
 .nav-link:hover {
     cursor: pointer;
     opacity: 0.8;
-    color: #FF69B4; 
+    color: var(--accent-color); 
 }
 
 .nav-link:hover::after {
@@ -211,13 +226,12 @@ nav {
     content: "";
     display: block;
     height: 2px;
-    background: #FF69B4;
+    background: var(--accent-color);
     left: 50%;
     width: 0;
     bottom: -4px;
     transition: width 0.3s ease, left 0.3s ease;
 } 
-
 
 /* 
 ==============================
@@ -266,7 +280,6 @@ GRID STYLES
 
 }
 
-
 main h3 {
     position: absolute;
     z-index: 3;
@@ -275,13 +288,10 @@ main h3 {
     left: 0%;
     width: 100%;
     text-align: center;
-    background-color: #4ca8a0b4; 
-    color: antiquewhite;
+    background-color: var(--accent-color-opacity); 
+    color: var(--light-text-color);
     justify-content: center;
 }
-
-
-
 
 /* 
 ==============================
@@ -338,10 +348,11 @@ aside img {
 .grid-item img.expanded {
     transform: scale(2); 
     position: absolute;
+    max-width: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
 aside {
     border-top: 2px solid rgba(0,0,0,0.1);
@@ -362,7 +373,7 @@ footer {
     width: 100%;
     bottom: 0;
     background: linear-gradient(to right, #2e0570, rgb(0, 0, 0));
-    color: antiquewhite;
+    color: var(--light-text-color);
     padding: 25px 0;
     border-top-left-radius: 100px;
     font-size: 15px;
@@ -370,7 +381,7 @@ footer {
 }
 
 footer h3 {
-    color: antiquewhite;
+    color: var(--light-text-color);
 }
 
 .col {
@@ -411,17 +422,16 @@ footer h3 {
 ul li {
     list-style: none;
     margin-bottom: 12px;
-    display: inline-block;
-    
+    display: inline-block;   
 }
 
 ul li a{
     text-decoration: none;
-    color: antiquewhite;   
+    color: var(--main-background-color);   
 }
 
 .footerLink:hover {
-    color: #57102C; 
+    color: var(--accent-color); 
     cursor: pointer; 
 }
 
@@ -435,7 +445,7 @@ ul li a{
     position: relative;
     display: block;
     height: 2px;
-    background: #57102C;
+    background: var(--accent-color);
     left: 50%;
     width: 0;
     bottom: -4px;
@@ -449,7 +459,7 @@ form {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid antiquewhite;
+    border-bottom: 1px solid var(--main-background-color);
     margin-bottom: 10px;
 }
 
@@ -461,7 +471,7 @@ form .fa-regular {
 form input {
     width: 100%;
     background: transparent;
-    color: antiquewhite;
+    color: var(--light-text-color);
     border: 0;
     outline: none;
 }
@@ -475,7 +485,7 @@ form button {
 
 form button .fa-solid {
     font-size: 16px;
-    color: antiquewhite;
+    color: var(--light-text-color);
 }
 
 .underline {
@@ -492,13 +502,17 @@ form button .fa-solid {
 .underline span {
     width: 15px;
     height: 100%;
-    background: antiquewhite;
+    background: var(--accent-color);
     border-radius: 3px;
     position: absolute;
     top: 0;
     left: 10px;
     animation: moving 2s linear infinite;
 } 
+
+hr {
+    color: var(--main-background-color);
+}
 
 /* 
 ==============================
@@ -592,7 +606,6 @@ BREAKPOINTS
     
     }
     
-    
     main h3 {
         position: absolute;
         z-index: 3;
@@ -601,11 +614,32 @@ BREAKPOINTS
         left: 0%;
         width: 100%;
         text-align: center;
-        background-color: #4ca8a0b4; 
-        color: antiquewhite;
+        background-color: none !important; 
+        color: var(--light-text-color);
         justify-content: center;
     }
     
+    main h3:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        color: var(--accent-color); 
+    }
+    
+    main h3:hover::after {
+        width: 100%;
+        left: 0;
+    }
+    
+    main h3::after {
+        content: "";
+        display: block;
+        height: 2px;
+        background: var(--accent-color);
+        left: 0;
+        width: 0;
+        bottom: -4px;
+        transition: width 0.3s ease, left 0.3s ease;
+    } 
 }
 
 @media (min-width: 992px){
@@ -656,76 +690,4 @@ BREAKPOINTS
     aside {
         max-width: 600px;
     }
-
 }
-/* 
-.collage {
-    display: grid;
-    grid-template-columns: 1fr 40px 1fr 40px 1fr;;
-    grid-template-rows: 1fr;
-    
-}
-
-.collage-1 {
-    grid-area: collage-1;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    z-index: 1;
-    transform: rotate(-5deg);
-}
-
-.collage-2 {
-    grid-area: collage-2;
-    position: relative;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    z-index: 2;
-}
-
-.collage-3 {
-    grid-area: collage-3;
-    grid-column-start: 4;
-    grid-column-end: 6;
-    z-index: 1;
-    transform: rotate(5deg);
-}
-
-.image-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; 
-}
-
-.collage img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-main .pythonheader {
-    position: absolute;
-    z-index: 3;
-    bottom: 10%;
-    left: 20%;
-    width: auto;
-    text-align: center;
-    background-color: #4CA8A1; 
-    padding: 0; 
-    margin: 0;
-}
-
-main h3 {
-    position: absolute;
-    z-index: 3;
-    bottom: 50%;
-    left: 20%;
-    width: auto;
-    text-align: center;
-    background-color: #4CA8A1; 
-
-    padding: 0; /* Adjust padding as needed */
-    margin: 0; /* Remove default margin */
-}
- */
