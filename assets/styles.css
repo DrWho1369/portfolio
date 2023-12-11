@@ -324,8 +324,22 @@ aside img {
     transform: rotate(4deg);
 }
 
+.grid-item img {
+    width: auto;
+    height: auto;
+    transition: transform 0.3s ease-in-out, z-index 0s 0.3s;
+}
+
+.grid-item.expanded {
+    z-index: 4;
+}
+
 .grid-item img.expanded {
     transform: scale(2); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
 aside {
@@ -336,7 +350,7 @@ aside {
 ==============================
 CSS FOOTER STYLES
 ==============================
- */
+*/
 
 footer {
     grid-area: named-footer;
