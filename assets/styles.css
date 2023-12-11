@@ -4,6 +4,8 @@ SHARED CSS
 ==============================
 */
 
+
+
 :root {
     --main-background-color: antiquewhite;
     --primary-text-color: rgb(53, 53, 53);
@@ -21,7 +23,9 @@ SHARED CSS
 }
 
 html {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: merel, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 16px;
     color: var(--primary-text-color);
 }
@@ -48,6 +52,9 @@ h4 {
     margin-top: 10px;
     margin-bottom: 20px;
     color: var(--accent-color);
+    font-family: merel, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 p {
@@ -196,11 +203,12 @@ nav {
     background-color: var(--main-background-color);
 }
 
-.nav-link, a {
+.nav-link, h4, a {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
+    color: var(--primary-text-color);
 }
 
 .fa-brands {
