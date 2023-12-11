@@ -5,3 +5,7 @@ function toggleNav(params) {
     const nav = document.querySelector("nav");
     nav.classList.toggle("hide-nav");
 }
+
+function expandImage(img) {
+    img.classList.toggle("expanded");
+  }

@@ -11,7 +11,7 @@ SHARED CSS
 }
 
 html {
-    font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     color:  rgb(53, 53, 53);
 }
@@ -226,33 +226,29 @@ GRID STYLES
 
 .collage {
     display: grid;
-    grid-template-columns: 1fr 40px 1fr 40px 1fr;;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    grid-template-areas: 
+        "collage-2"
+        "collage-1"
+        "collage-3";
     
 }
 
 .collage-1 {
     grid-area: collage-1;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    z-index: 1;
-    transform: rotate(-5deg);
+    position: relative;
 }
 
 .collage-2 {
     grid-area: collage-2;
     position: relative;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    z-index: 2;
 }
 
 .collage-3 {
     grid-area: collage-3;
-    grid-column-start: 4;
-    grid-column-end: 6;
-    z-index: 1;
-    transform: rotate(5deg);
+    position: relative;
 }
 
 .image-link {
@@ -266,32 +262,21 @@ GRID STYLES
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+
 }
 
-main .pythonheader {
-    position: absolute;
-    z-index: 3;
-    bottom: 10%;
-    left: 20%;
-    width: auto;
-    text-align: center;
-    background-color: #4CA8A1; 
-    padding: 0; 
-    margin: 0;
-}
 
 main h3 {
     position: absolute;
     z-index: 3;
-    bottom: 50%;
-    left: 20%;
-    width: auto;
+    top: 5%;
+    padding: 20px;
+    left: 0%;
+    width: 100%;
     text-align: center;
-    background-color: #4CA8A1; 
-
-    padding: 0; /* Adjust padding as needed */
-    margin: 0; /* Remove default margin */
+    background-color: #4ca8a0b4; 
+    color: antiquewhite;
+    justify-content: center;
 }
 
 
@@ -338,6 +323,10 @@ aside img {
     z-index: 1;
     transform: rotate(4deg);
 }
+
+.grid-item img.expanded {
+    transform: scale(2); 
+  }
 
 aside {
     border-top: 2px solid rgba(0,0,0,0.1);
@@ -543,6 +532,61 @@ BREAKPOINTS
     header .fa-bars {
         display: none;
     }
+
+    .collage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-height: 500px;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px; 
+        grid-template-areas: 
+        "collage-2 collage-2"
+        "collage-3 collage-1";       
+    }
+    
+    .collage-1 {
+        grid-area: collage-1;
+
+    }
+    
+    .collage-2 {
+        grid-area: collage-2;
+
+    }
+    
+    .collage-3 {
+        grid-area: collage-3;
+
+    }
+
+    .image-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; 
+    }
+    
+    .collage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    
+    }
+    
+    
+    main h3 {
+        position: absolute;
+        z-index: 3;
+        top: 5%;
+        padding: 20px;
+        left: 0%;
+        width: 100%;
+        text-align: center;
+        background-color: #4ca8a0b4; 
+        color: antiquewhite;
+        justify-content: center;
+    }
+    
 }
 
 @media (min-width: 992px){
@@ -595,4 +639,74 @@ BREAKPOINTS
     }
 
 }
+/* 
+.collage {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr 40px 1fr;;
+    grid-template-rows: 1fr;
+    
+}
 
+.collage-1 {
+    grid-area: collage-1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    z-index: 1;
+    transform: rotate(-5deg);
+}
+
+.collage-2 {
+    grid-area: collage-2;
+    position: relative;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    z-index: 2;
+}
+
+.collage-3 {
+    grid-area: collage-3;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    z-index: 1;
+    transform: rotate(5deg);
+}
+
+.image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+}
+
+.collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+main .pythonheader {
+    position: absolute;
+    z-index: 3;
+    bottom: 10%;
+    left: 20%;
+    width: auto;
+    text-align: center;
+    background-color: #4CA8A1; 
+    padding: 0; 
+    margin: 0;
+}
+
+main h3 {
+    position: absolute;
+    z-index: 3;
+    bottom: 50%;
+    left: 20%;
+    width: auto;
+    text-align: center;
+    background-color: #4CA8A1; 
+
+    padding: 0; /* Adjust padding as needed */
+    margin: 0; /* Remove default margin */
+}
+ */
