@@ -1,11 +1,14 @@
+
+/* {LEASE NOTE - I have tried my harded to condense this CSS down, but I would really be interested in learning if I could have made any more streamlining in my code here 🙏 */
+
+
 /* 
 ==============================
 SHARED CSS
 ==============================
 */
 
-
-
+/* Here I set my root colours, this made it easier to change the page colour theme from one location */
 :root {
     --main-background-color: antiquewhite;
     --primary-text-color: rgb(53, 53, 53);
@@ -21,6 +24,8 @@ SHARED CSS
     margin: 0;
     padding: 0;
 }
+
+/* I downloaded a font family from google fonts to include a unique font to give my portfolio more personal style */
 
 html {
     font-family: merel, sans-serif;
@@ -68,7 +73,7 @@ img {
 
 /* 
 ==============================
-CSS OUTER GRID STYLES
+CSS OUTER GRID STYLES - HEADER BAR & NAV BAR CONTAINER
 ==============================
  */
 
@@ -102,7 +107,7 @@ nav {
 
 /* 
 ==============================
-CSS INNER GRID CONTAINER STYLES
+CSS INNER GRID CONTAINER STYLES - MAIN CONTENT, ASIDE and FOOTER CONTAINER
 ==============================
 */
 
@@ -214,10 +219,13 @@ nav {
 .fa-brands {
     justify-self: center;
 }
+
 .nav-link a{
     text-decoration: none;
     align-items: center;
 }
+
+/* Here I implemented some cool css that changed the nav items when the pointer hovered over them */
 
 .nav-link:hover {
     cursor: pointer;
@@ -353,6 +361,8 @@ aside img {
     height: auto;
     transition: transform 0.1s ease-in-out, z-index 0s 0.1s;
 }
+
+/* This is where I implemented the expanded styles to make the images grow and appear in the center of the viewport. */
 
 .grid-item.expanded {
     z-index: 4;
@@ -533,6 +543,8 @@ KEYFRAMES
 ==============================
 */
 
+/* I learnt adding this would make my underlines in the footer move!!! So cool */
+
 @keyframes moving {
     0% {
         left: -20px;
@@ -559,7 +571,7 @@ KEYFRAMES
 BREAKPOINTS
 ==============================
 */
-
+/* this is the first media query for when the application is displayed on devices bigger than a mobile, I wanted the left nav bar to stop being a hamburger menu and become a block element on the left hand side */
 @media (min-width: 576px){
     nav {
         display: block !important;
@@ -578,7 +590,7 @@ BREAKPOINTS
     header .fa-bars {
         display: none;
     }
-
+/* I wanted my main collage of my projects to be displayed in column up until this point, and then to display as a grid, with the top item twice the width as the bottom two */
     .collage {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -618,7 +630,8 @@ BREAKPOINTS
         object-fit: cover;
     
     }
-    
+
+/* I wanted to add a cool hover effect to the headers on this part when the device was larger than mobile, such that it will change colour and a line will grow from the left  */
     main h3 {
         position: absolute;
         z-index: 3;
@@ -655,6 +668,7 @@ BREAKPOINTS
     } 
 }
 
+/* At this width I wanted my aside to display on the side rather than underneath  */
 @media (min-width: 992px){
     .inner-grid {
         grid-template-rows: 1fr 60px;
@@ -669,6 +683,7 @@ BREAKPOINTS
     }
 }
 
+/* Above this width, I was concious that I did not want my website header to display with the items too far apart (split all the way to left and right). As such I set the middle column of the outer grit to be at 1200px */
 @media (min-width: 1440px){
     .outer-grid {
         grid-template-columns: 1fr 1200px 1fr;
@@ -692,7 +707,7 @@ BREAKPOINTS
         grid-area: named-rh;
         justify-self: start;
     }
-
+/* I wanted the left hand nav to be aligned to the right (flex end) for readability */
     nav {
         display: flex !important;
         flex-direction: column;

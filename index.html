@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- This script allowed me to import some icons below -->
     <script src="https://kit.fontawesome.com/caea58ee9b.js" crossorigin="anonymous"></script>
+<!-- This introduces the font I licensed from my adobe account -->
     <link rel="stylesheet" href="https://use.typekit.net/prw8ysb.css">
     <link rel="stylesheet" href="assets/styles.css">
     <title>Tom Baker's Portfolio: Full Stack Developer</title>
 </head>
 <body>
+    <!-- I created an outer grid to contain my vertical header nav bar aand horizontal nav bar. As I designed with a mobile first application in mind, this outer grid just has the header visiable up until 576px media query, whereby the hide nav menu , which was previously a hamburger item, is displayed as a left hand side nav bar -->
     <div class="outer-grid">
         <header>
             <div class="left-header">
@@ -26,6 +29,7 @@
                 </div>
             </div>
         </header>
+<!-- I worked out when playing around linking images how to link to another html page using the same technique. I have used this to create multiple pages! Not sure if this is correct? I had to copy the header and footer html over to each page - is that correct, or is there a better way to do that? -->
         <nav class="hide-nav">
             <div class="nav-link">
                 <a href="./pages/javascript-collection.html">
@@ -46,6 +50,7 @@
                 </a>
             </div>
         </nav>
+<!-- Here i created an inner grid to contain my main content, an aside, and my footer.  -->
         <div class="inner-grid">
             <main>
                 <div class="BatMan"><i class="fa-solid fa-hippo"></i></div>
@@ -53,6 +58,7 @@
                 <p>Hello and welcome to my portfolio! Showcasing my projects in JavaScript, Python, and React. The foundations are laid, and I'm poised for significant growth. Stay tuned for updates as these projects evolve into fully-fledged showcases of my skills and passion for coding.</p>
                 <h2>A Grid Mosaic Layout of my Projects</h2>
                 <p>🤫 Welcome to my grid, this is work in progress 🙀</p>
+<!-- Within this inner grid I created my collage grid of my projects. I dont have many projects yet but I thought to contain within the grid elements links to individual collection pages for each different language I am learning currently -->
                 <div class="collage">
                     <a class="image-link collage-1" href="./pages/javascript-collection.html">
                         <h3 class="javascriptheader">Javascript Collection</h3>
@@ -68,6 +74,7 @@
                     </a>
                 </div>
             </main>
+<!-- For my aside section I contained a bio of myself as well as some images. I had fun learning how to use the grid layout for an alternative design, having 1 row, 5 columns to design an overlapping design. I then used some basic javascript to make the images appear front and center of the device screen when clicked, and to grow by a factor of 2 -->
             <aside>
                 <h2>Tom Baker: Junior Full Stack Engineer</h2>
                 <p>I am a budding junior full-stack engineer, embarking on the exciting journey of software development. Armed with the knowledge I gained from completing two comprehensive bootcamps, I have honed my skills in Python, HTML, CSS, JavaScript, and React. Eager to contribute to the ever-evolving world of technology, I am passionate about leveraging my newfound expertise to build dynamic and user-friendly web applications. My enthusiasm and commitment to continuous learning make me a valuable asset to any development team. As I navigate my early career, I bring a fresh perspective and a determination to make a meaningful impact in the field of full-stack development.</p>
@@ -79,6 +86,7 @@
                     <img class="image-tom3 grid-item" src="./assets/images/image-of-tom2.jpg" alt="An image of Tom Baker" onclick="expandImage(this)">
                 </div>
             </aside>
+<!-- For my footer section, I really wanted to do something different. I thought applying a moving underline to the headers would look very cool. I added an email form but I dont know yet how to link this up to a database, I assume this would be with javascript talking to python potentially. We will see! -->
             <footer>
                 <div class="footer">
                     <div class="row">
