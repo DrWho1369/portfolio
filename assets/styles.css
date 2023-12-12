@@ -247,6 +247,11 @@ GRID STYLES
 ==============================
 */
 
+.BatMan, h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .collage {
     display: grid;
     grid-template-columns: 1fr;
