@@ -24,6 +24,12 @@ Welcome to my Portfolio Website, a curated space highlighting my expertise in CS
 
 3. Code Repository: Interested in the nitty-gritty details? Feel free to check out the linked code repositories for each project to delve into the source code.
 
+
+
+https://github.com/DrWho1369/portfolio/assets/125075858/0e95f625-7dd6-4836-82c9-98461b130bb0
+
+
+
 ### Stay Connected
 
 I'm excited to share my journey and ongoing projects with you. Connect with me through the provided contact details or explore my social media links to stay updated on the latest additions and developments. Thank you for visiting, and I hope you enjoy exploring the diverse areas of my coding portfolio!
