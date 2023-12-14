@@ -5,30 +5,30 @@
 Welcome to my interactive portfolio showcasing CSS mastery, responsiveness, and deployment skills. As a part of a coding bootcamp challenge, this project reflects my dedication to crafting an effective portfolio for future career success.
 Features
 
-    Interactive Navigation:
+- Interactive Navigation:
         Seamlessly navigate sections about me, my work, and contact details.
 
-    Responsive Design:
+- Responsive Design:
         Adapted layout ensures optimal viewing across various screens.
 
-    Application Grid:
+- Application Grid:
         Titled images of applications with a focus on highlighting the first one.
 
-    Live Application Links:
+- Live Application Links:
         Clicking images redirects to deployed applications for a hands-on experience.
 
 ## How to Explore
 
-    Access the Live Portfolio:
+- Access the Live Portfolio:
         My Portfolio (Deployed Application Link)
 
-    Navigation:
+- Navigation:
         Scroll down to discover sections or use the navigation links.
 
-    Project Showcase:
+- Project Showcase:
         Explore titled images of applications, with the first one emphasized.
 
-    Responsive Layout:
+- Responsive Layout:
         Resize the page or view on different devices to experience responsive design.# My Portfolio Website
 
 
